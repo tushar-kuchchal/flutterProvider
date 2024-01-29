@@ -33,7 +33,7 @@ class SelectedFavoriteItems extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Center(child: Icon(Icons.hourglass_empty,size: 100,color: Colors.purple,)),
+                  Center(child: Icon(Icons.hourglass_empty,size: 100)),
                   SizedBox(height: 30,),
                   Text('Your Favorite List is Empty', style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700,color: Colors.purple),)
                 ],

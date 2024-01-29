@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_provider/provider/favorite/favorite_provider.dart';
 import 'package:flutter_provider/screens/favourite/selected_favorite_items.dart';
+import 'package:flutter_provider/screens/theme_changer_screen.dart';
 import 'package:provider/provider.dart';
 
 class Favoriteitems extends StatefulWidget {
@@ -26,6 +27,11 @@ class _FavoriteitemsState extends State<Favoriteitems> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Favorite List'),
+        leading: InkWell(
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (ctx)=> ThemeChangerScreen()));
+          },
+          child: Icon(Icons.settings)),
       ),
       floatingActionButton: Consumer<FavoriteItemsProvider>(
         builder: (context, value, child) {
