@@ -1,12 +1,14 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_provider/provider/auth_provider.dart';
 import 'package:flutter_provider/provider/count_provider.dart';
 import 'package:flutter_provider/provider/favorite/favorite_provider.dart';
 import 'package:flutter_provider/provider/slider_provider.dart';
 import 'package:flutter_provider/provider/theme_provider.dart';
 import 'package:flutter_provider/screens/counter_example.dart';
 import 'package:flutter_provider/screens/favourite/favorite_items.dart';
+import 'package:flutter_provider/screens/login.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -32,6 +34,9 @@ class MainApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (_) => ThemeChangeProvider(),
         ),
+        ChangeNotifierProvider(
+          create: (_) => AuthProvider(),
+        ),
       ],
       child: Builder(
         builder: (BuildContext context) {
@@ -50,7 +55,7 @@ class MainApp extends StatelessWidget {
                   primarySwatch: Colors.purple,
                   appBarTheme: AppBarTheme(color: Colors.teal),
                   iconTheme: IconThemeData(color: Colors.tealAccent[100])),
-              home: Favoriteitems());
+              home: Login());
         },
       ),
     );
